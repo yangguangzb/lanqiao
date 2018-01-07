@@ -1,4 +1,6 @@
 package doorTraining;
+import java.util.Scanner;
+
 /**
  * 
 	问题描述
@@ -23,6 +25,18 @@ package doorTraining;
  */
 public class A1 {
 	public static void main(String[] args) {
-		
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		long b;
+		A1 a1=new A1();
+		b=a1.getA(a);
+		System.out.println(b%10007);
+	}
+	public long getA(int a){
+		if(a==1||a==2){
+			return 1;
+		}else{
+			return getA(a-1)+getA(a-2);
+		}
 	}
 }
