@@ -1,4 +1,7 @@
 package doorTraining;
+
+import java.util.Scanner;
+
 /**
  *  问题描述
 	给定圆的半径r，求圆的面积。
@@ -17,8 +20,15 @@ package doorTraining;
 	样例输出
 	50.2654825
 	数据规模与约定
-	1 <= r <= 10000。 
+	1 <= r <= 10000。
  */
 public class A2 {
-
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int i;
+		i=sc.nextInt();
+		double s;
+		s=3.1415926*i*i;
+		System.out.println(s);
+	}
 }
