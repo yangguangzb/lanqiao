@@ -27,12 +27,93 @@ import java.util.Scanner;
 	分析：竟然有一个！0次幂！矩阵的零次冥要输出单位矩阵！
 	*/
 public class Basic17 {
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		//矩阵阶数
-		int N=sc.nextInt();
-		//幂数
-		int M=sc.nextInt();
-		
-	}
+	public static void main(String[] args) {  
+        int N,M;  
+        Scanner sc = new Scanner(System.in);  
+        N = sc.nextInt();//行列  
+        M = sc.nextInt();//次幂  
+        int[][] matrix = new int[N][N];  
+        //输入  
+        for(int i = 0; i < N; i++)  
+        {  
+            for (int j = 0; j < N; j++)  
+             {  
+                matrix[i][j]=sc.nextInt();  
+            }  
+        }  
+        //判断几次幂  
+        if(M==1)  
+        {  
+            printNum(matrix,N);  
+        }  
+        else if(M==0)  
+        {  
+            for (int i=0;i < N;i++ )  
+            {  
+                for (int j=0; j<N ;j++ )  
+                {  
+                    matrix[i][j]=1;  
+                }  
+            }  
+            printNum(matrix,N);  
+        }  
+        else if(M>=2&&M<=5)  
+        {  
+            getNum(matrix,N,M);  
+        }  
+    }  
+  
+    public static void getNum(int[][] matrix,int N,int M)  
+    {  
+        int[][] matrixCopy = new int [N][N];  
+          
+        for(int i = 0 ;i < N; i++)  
+        {  
+            for(int j = 0; j < N; j++)  
+            {  
+                for (int k = 0; k < N; k++)  
+                 {  
+                    matrixCopy[i][j]+=matrix[i][k]*matrix[k][j];//交换  
+                }  
+            }  
+        }  
+        --M;  
+        while((--M)>0)  
+        {     
+            int [][] temp = new int[N][N];  
+            for(int i = 0; i < N; i++)  
+            {  
+                for (int j = 0; j < N; j++)  
+                 {  
+                    temp[i][j]=matrixCopy[i][j];//用于保存上次结果  
+                }  
+            }  
+  
+            for(int i = 0 ;i < N; i++)  
+            {  
+                for(int j = 0; j < N; j++)  
+                {  
+                    matrixCopy[i][j]=0;//用于清空上次结果，用temp保存上次结果参加运算  
+                    for (int k = 0; k < N; k++)  
+                     {  
+                        matrixCopy[i][j]+=temp[i][k]*matrix[k][j];  
+                    }  
+                }  
+            }  
+        }  
+        printNum(matrixCopy,N);   
+    }  
+  
+    public static void printNum(int[][] matrix,int N)  
+    {  
+        //输出  
+        for(int i = 0; i < N; i++)  
+        {  
+            for (int j = 0; j < N; j++)  
+             {  
+                System.out.print(matrix[i][j]+" ");  
+            }  
+            System.out.print("\n");  
+        }  
+    }  
 }
