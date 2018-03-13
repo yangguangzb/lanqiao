@@ -21,25 +21,15 @@ public class Main01 {
 	注意：你提交的应该是一个整数，不要填写任何多余的内容或说明性文字。
 	*/
 	public static void main(String[] args) {
-		/*int num=777;
-		for(int i=1;i<12;i++){
-			if(i%2!=0){
-				num=num*2;
+		int num=777;
+		String s="vxvxvxvxvxvxvvx";
+		for(int i=0;i<s.length();i++){
+			if(s.charAt(i)=='v'){
+				num*=2;
 			}else{
-				num=num-555;
+				num-=555;
 			}
 		}
-		System.out.println(num*2*2-555);*/
-		String s = "vxvxvxvxvxvxvvx";
-        long m = 777;
-
-        for(int i = 0;i<s.length();i++){
-            if(s.charAt(i) == 'v'){
-                m *= 2;
-            }else{
-                m -= 555;
-            }
-        }
-        System.out.println(m);
+		System.out.println(num);
 	}
 }
