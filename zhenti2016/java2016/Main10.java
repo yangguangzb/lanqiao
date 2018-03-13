@@ -34,11 +34,10 @@ public class Main10 {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
-		long time=System.currentTimeMillis();
 		for(int a=0;a<=Math.sqrt(n);a++){
-			for(int b=0;b<=Math.sqrt(n);b++){
-				for(int c=0;c<=Math.sqrt(n);c++){
-					for(int d=0;d<=Math.sqrt(n);d++){
+			for(int b=a;b<=Math.sqrt(n);b++){
+				for(int c=b;c<=Math.sqrt(n);c++){
+					for(int d=c;d<=Math.sqrt(n);d++){
 						if(Math.pow(a,2)+Math.pow(b,2)+Math.pow(c,2)+Math.pow(d,2)==n){
 							System.out.print(a+" "+b+" "+c+" "+d);
 							return ;
@@ -47,8 +46,5 @@ public class Main10 {
 				}
 			}
 		}
-		long time2=System.currentTimeMillis();
-		System.out.println(time2);
-		System.out.println(time);
 	}
 }
