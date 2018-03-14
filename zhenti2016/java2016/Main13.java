@@ -19,6 +19,8 @@ public class Main13 {
 	（左右、上下、对角都算相邻）
 	一共有多少种可能的填数方案？1580
 	*/
+	
+	//方法一(暴露破解)
 	public static void main(String[] args) {
 		Set<Integer> set;
 		int  count=0;
