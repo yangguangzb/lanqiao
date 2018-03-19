@@ -7,9 +7,9 @@ public class Main04 {
              这时，我们可以建立一个“有理数类”，下面的代码初步实现了这个目标。为了简明，它只提供了加法和乘法运算
     */
 	public static void main(String[] args) {
-		Rational a = new Rational(2,4);
+		Rational a = new Rational(1,3);
 		Rational b = new Rational(1,6);
-		Rational c = a.mul(b);
+		Rational c = a.add(b);
 		System.out.println(a + "+" + b + "=" + c);
 	}
 	
@@ -36,7 +36,7 @@ class Rational{
 	}
 	// 加法
 	public Rational add(Rational x){
-		return new Rational(ra-x.ra,rb-x.rb);  //填空位置
+		return new Rational(ra*x.rb+x.ra*rb,rb*x.rb);  //填空位置
 	}
 	// 乘法
 	public Rational mul(Rational x){
