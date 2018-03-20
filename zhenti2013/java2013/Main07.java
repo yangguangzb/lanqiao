@@ -1,5 +1,9 @@
 package java2013;
-
+/**
+ * 思路：从符合条件的数字中挑选
+ * @author zhangbiao
+ *
+ */
 public class Main07 {
 	/*
 	小李的店里专卖其它店中下架的样品电视机，可称为：样品电视专卖店。
@@ -14,42 +18,71 @@ public class Main07 {
 	答案是一个4位的整数，请通过浏览器直接提交该数字。
 	注意：不要提交解答过程，或其它辅助说明类的内容。
 	*/
+	//答案：9088
 	public static void main(String[] args) {
-		for(int i=1000;i<9999;i++){
-			int a=i/1000;	//千
-			int b=i/100%10;	//百
-			int c=i/10%10;	//十
-			int d=i%10;		//个
-			if(a==9){
-				a=6;
+		int[] x=new int[]{1,2,5,6,8,9,0};
+		int[] i=new int[100];
+		int[] ii=new int[100];
+		int[] j=new int[100];
+		int[] jj=new int[100];
+		int k=0;
+		int g=0;
+		for(int a=0;a<6;a++){	//千
+			for(int b=0;b<7;b++){	//百
+				for(int c=0;c<7;c++){  //十
+					for(int d=0;d<6;d++){	//个
+						//原来
+						int m=0;
+						//颠倒后的
+						if(x[a]==6){
+							m=9*1000+x[b]*100+x[c]*10+x[d];
+						}
+						if(x[b]==6){
+							m=x[a]*1000+9*100+x[c]*10+x[d];
+						}
+						if(x[c]==6){
+							m=x[a]*1000+x[b]*100+9*10+x[d];
+						}
+						if(x[d]==6){
+							m=x[a]*1000+x[b]*100+x[c]*10+9;
+						}
+						
+						if(x[a]==9){
+							m=6*1000+x[b]*100+x[c]*10+x[d];
+						}
+						if(x[b]==9){
+							m=x[a]*1000+6*100+x[c]*10+x[d];
+						}
+						if(x[c]==9){
+							m=x[a]*1000+x[b]*100+6*10+x[d];
+						}
+						if(x[d]==9){
+							m=x[a]*1000+x[b]*100+x[c]*10+6;
+						}
+						int n=x[d]*1000+x[c]*100+x[b]*10+x[a];
+						if(m-n>200&&m-n<300){
+							i[k]=m;
+							ii[k]=n;
+							k++;
+						}
+						if(n-m>800&&n-m<900){
+							j[g]=m;
+							jj[g]=n;
+							g++;
+						}
+					}
+				}
 			}
-			if(a==6){
-				a=9;
-			}
-			if(b==9){
-				b=6;
-			}
-			if(b==6){
-				b=9;
-			}
-			if(c==9){
-				c=6;
-			}
-			if(c==6){
-				c=9;
-			}
-			if(d==9){
-				d=6;
-			}
-			if(d==6){
-				d=9;
-			}
-			if(d!=0&&a!=3&&b!=3&&c!=3&&d!=3
-			   &&a!=4&&b!=4&&c!=4&&d!=4
-			   &&a!=7&&b!=7&&c!=7&&d!=7){
-				int m=d*1000+c*100+b*10+a;
-				if(i-m>200&&i-m<300){
-					System.out.println(i+"--"+m);
+		}
+		
+		//寻找符合条件的
+		for(int a=0;a<i.length;a++){
+			for(int b=0;b<j.length;b++){
+				if(i[a]!=0&&ii[a]!=0&&j[b]!=0&&jj[b]!=0){
+					if((ii[a]-i[a])+(jj[b]-j[b])==558){
+						System.out.println(i[a]);
+						break;
+					}
 				}
 			}
 		}
