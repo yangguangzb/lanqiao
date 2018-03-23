@@ -23,10 +23,12 @@ public class Basic09 {
 		Scanner sc=new Scanner(System.in);
 		int n=sc.nextInt();
 		//计算5位
+		boolean bool=false;
 		for(int i=1;i<10;i++){
 			for(int j=0;j<10;j++){
 				for(int k=0;k<10;k++){
 					if((2*i+2*j+k)==n){
+						bool=true;
 						System.out.println(i+""+j+""+k+""+j+""+i);
 					}
 				}
@@ -37,10 +39,14 @@ public class Basic09 {
 			for(int j=0;j<10;j++){
 				for(int k=0;k<10;k++){
 					if((i+j+k)*2==n){
+						bool=true;
 						System.out.println(i+""+j+""+""+k+""+k+""+j+""+i);
 					}
 				}
 			}
+		}
+		if(bool==false){
+			System.out.println("-1");
 		}
 	}
 }
