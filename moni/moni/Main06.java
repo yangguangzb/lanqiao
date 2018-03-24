@@ -22,6 +22,11 @@ public class Main06 {
 				return ;
 			}
 		}
+		if(x==11){
+			if(a[7]*a[8]<=a[9]*a[10]){
+				return ;
+			}
+		}
 		if(x==13){
 			Set<Integer> set=new HashSet<Integer>();
 			for(int i=1;i<=12;i++){
