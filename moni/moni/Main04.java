@@ -22,7 +22,7 @@ public class Main04 {
 		&&a[1]+a[4]+a[7]==a[2]+a[5]+a[8]&&a[2]+a[5]+a[8]==a[3]+a[6]+a[9]&&a[1]!=a[2]){
 				count++;
 				for(int i=1;i<10;i++){
-					System.out.print(a[1]+" ");
+					System.out.print(a[i]+" ");
 					if(i%3==0){
 						System.out.println();
 					}
@@ -37,5 +37,6 @@ public class Main04 {
 				vis[i]=0;
 			}
 		}
+		
 	}
 }
