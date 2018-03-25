@@ -1,4 +1,7 @@
 package moni;
+
+import java.util.Scanner;
+
 /**
  * 将所以的炸弹放入一个数组中，然后对其中一个炸弹用dfs()进行连锁引爆，
  * 判断是否有还有未被引爆的，
@@ -7,8 +10,20 @@ package moni;
  *
  */
 public class Main08 {
-	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();		//行
+		int m=sc.nextInt();		//列
+		int[][][] a=new int[n][m][1];
+		for(int i=0;i<n;i++){
+			for(int j=0;j<m;j++){
+				a[i][j][0]=sc.nextInt();
+			}
+		}
+		
+	}
 }
+
 /**
 struct Point{
     int x; 
