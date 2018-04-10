@@ -7,7 +7,7 @@
 
 ### 2017年省赛真题
 | 编号   | Title                                    | Tag                                      |
-| :---  | :--- | :---------------------------------------  |
+| :---  | :--------------------------------------------------------- | :-------------------------------------------------  |
 | 01    | 外星日历                                  | [查看解析](https://github.com/yangguangzb/lanqiao/blob/master/zhenti2017/java2017/Main01.java)|
 | 02    | 兴趣小组                                  | [查看解析](https://github.com/yangguangzb/lanqiao/blob/master/zhenti2017/java2017/Main02.java)|
 | 03    | 纸牌三角形                                  | [查看解析](https://github.com/yangguangzb/lanqiao/blob/master/zhenti2017/java2017/Main03.java)|
